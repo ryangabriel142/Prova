@@ -1,0 +1,46 @@
+program prova;
+ 
+uses
+  sysutils;
+ 
+var
+ altura : Real;
+ pesoIdealH : Real;
+ pesoIdealM : Real;
+ nome : String;
+ sexo : String;   
+begin
+ 
+  write('Informe o nome: ');
+  ReadLn (nome);
+ 
+  write('Informe a altura : ');
+  ReadLn (altura);
+ 
+  {* informe m para sexo feminino e h para sexo masculino *}
+  write('Informe o sexo h-masculino m-feminino: ');
+  ReadLn (sexo);
+ 
+  if sexo = 'm' then
+  begin
+    pesoIdealM := (62.1 * altura) - 44.7;
+    writeln('O seu peso ideal ', nome, ' e ', FormatFloat('#0.00', pesoIdealM));
+  end
+  else
+  begin
+ 
+    if sexo = 'h' then
+    begin
+      pesoIdealH := (72.7 * altura) - 58.0;
+ 
+      writeln('O seu peso ideal ', nome, ' e ', FormatFloat('#0.00', pesoIdealH));
+    end
+    else
+    begin
+      writeln('Digite h para homem, se for mulher digite m');
+    end;
+ 
+  end;
+ 
+  ReadLn;
+end.
